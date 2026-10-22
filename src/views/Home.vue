@@ -34,7 +34,11 @@
         <div class="hero-content">
           <div class="hero-logo">CCS</div>
           <p class="hero-kicker">CENTRAL PHILIPPINE UNIVERSITY</p>
+<<<<<<< HEAD
           <h1>Alyssa the Future Through Technology</h1>
+=======
+          <h1>kelly Shaping the Future Through Technology</h1>
+>>>>>>> 94219e3 (upload 2)
           <p class="hero-description">
             Empowering students to innovate, create, and lead
             in the ever-changing world of computing.
