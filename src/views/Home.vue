@@ -124,17 +124,6 @@
         </div>
       </section>
 
-      <!-- FACULTY AND STAFF -->
-      <section id="faculty" class="section faculty">
-        <div class="section-heading">
-          <p class="eyebrow">THE PEOPLE BEHIND OUR SUCCESS</p>
-          <h2>Faculty and Staff</h2>
-          <p>
-            Meet the educators and personnel listed in the
-            CPU College of Computer Studies directory.
-          </p>
-        </div>
-
       <section id="partnerships" class="section partnerships">
         <div class="section-heading">
           <p class="eyebrow">CONNECTED TO THE INDUSTRY</p>
