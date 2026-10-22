@@ -34,7 +34,7 @@
         <div class="hero-content">
           <div class="hero-logo">CCS</div>
           <p class="hero-kicker">CENTRAL PHILIPPINE UNIVERSITY</p>
-          <h1>Shaping the Future Through Technology</h1>
+          <h1>Regine the Future Through Technology</h1>
           <p class="hero-description">
             Empowering students to innovate, create, and lead
             in the ever-changing world of computing.
