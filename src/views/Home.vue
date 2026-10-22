@@ -34,10 +34,7 @@
         <div class="hero-content">
           <div class="hero-logo">CCS</div>
           <p class="hero-kicker">CENTRAL PHILIPPINE UNIVERSITY</p>
-
           <h1>BANG Shaping the Future Through Technology</h1>
-
-    
           <p class="hero-description">
             Empowering students to innovate, create, and lead
             in the ever-changing world of computing.
@@ -137,55 +134,6 @@
             CPU College of Computer Studies directory.
           </p>
         </div>
-
-        <p class="faculty-source">
-          Photos and names are sourced from the
-          <a
-            href="https://ccs.cpu.edu.ph/faculty-and-staff/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >official CCS directory</a>.
-          Photos require an internet connection.
-        </p>
-
-        <div
-          v-for="group in facultyGroups"
-          :key="group.title"
-          class="department"
-        >
-          <div class="department-heading">
-            <span class="department-number">{{ group.number }}</span>
-            <div>
-              <h3>{{ group.title }}</h3>
-              <p>{{ group.subtitle }}</p>
-            </div>
-          </div>
-
-          <div class="faculty-grid">
-            <article
-              v-for="person in group.people"
-              :key="person.name"
-              class="faculty-card"
-            >
-              <img
-                class="faculty-photo"
-                :src="person.photo"
-                :alt="'Photo of ' + person.name"
-                loading="lazy"
-                @error="handleImageError"
-              />
-              <div class="faculty-info">
-                <h4>{{ person.name }}</h4>
-                <p class="faculty-role">{{ person.role }}</p>
-                <p>
-                  <strong>Educational attainment:</strong>
-                  {{ person.education }}
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
 
       <section id="partnerships" class="section partnerships">
         <div class="section-heading">
