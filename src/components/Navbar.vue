@@ -11,11 +11,9 @@
 
     <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/services">Services</RouterLink>
-      <RouterLink to="/expertise">Expertise</RouterLink>
-      <RouterLink to="/projects">Projects</RouterLink>
-      <RouterLink to="/contact" class="nav-contact">Contact Us</RouterLink>
+      <RouterLink to="/about">Program</RouterLink>
+      <RouterLink to="/services">Partnership</RouterLink>
+      
     </nav>
   </header>
 </template>
