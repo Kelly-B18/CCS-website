@@ -23,7 +23,6 @@
       <nav :class="{ 'nav-open': menuOpen }">
         <a href="#hero" @click="menuOpen = false">Home</a>
         <a href="#programs" @click="menuOpen = false">Programs</a>
-        <a href="#faculty" @click="menuOpen = false">Faculty &amp; Staff</a>
         <a href="#partnerships" @click="menuOpen = false">Partnerships</a>
       </nav>
     </header>
