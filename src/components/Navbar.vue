@@ -11,8 +11,12 @@
 
     <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">Program</RouterLink>
-      <RouterLink to="/services">Partnership</RouterLink>
+      <RouterLink to="about">About</RouterLink>
+      <RouterLink to="/Academics">Academics</RouterLink>
+      <RouterLink to="/Service">Admission</RouterLink>
+      <RouterLink to="/Campuslife">Campuslife</RouterLink>
+      <RouterLink to="/Contact">Contact</RouterLink>
+
       
     </nav>
   </header>
