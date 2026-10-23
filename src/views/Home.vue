@@ -5,7 +5,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <div class="hero-logo">CCS</div>
-          <p class="hero-kicker">CENTRAL PHILIPPINE UNIVERSITY</p>
+          <p class="hero-kicker">COLLEGE OF COMPUTER STUDIES</p>
           <h1>Shaping the Future Through Technology</h1>
           <p class="hero-description">
             Empowering students to innovate, create, and lead
