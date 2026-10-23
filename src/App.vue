@@ -5,7 +5,6 @@ import Navbar from './components/Navbar.vue'
 
 <template>
   <div class="app">
-    <Navbar />
 
     <main>
       <RouterView />
@@ -20,6 +19,10 @@ import Navbar from './components/Navbar.vue'
         © 2026 Centralian Digital Solutions. Student project concept.
       </p>
     </footer>
+
+    <!-- MOVE NAVBAR HERE AT THE VERY BOTTOM -->
+    <Navbar />
+
   </div>
 </template>
 
