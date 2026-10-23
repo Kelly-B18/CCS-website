@@ -13,11 +13,11 @@ import Navbar from './components/Navbar.vue'
 
     <footer class="footer">
       <div>
-        <h3>NEXORA<span> DIGITAL SOLUTIONS</span></h3>
+        <h3>Centralian<span> DIGITAL SOLUTIONS</span></h3>
         <p>Creative ideas. Smart technology. Better solutions.</p>
       </div>
       <p class="copyright">
-        © 2026 NEXORA Digital Solutions. Student project concept.
+        © 2026 Centralian Digital Solutions. Student project concept.
       </p>
     </footer>
   </div>
