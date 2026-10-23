@@ -40,9 +40,9 @@
         </div>
       </div>
 
-      <RouterLink to="/contact">Contact</RouterLink>
       <RouterLink to="/news">News</RouterLink>
       <RouterLink to="/faculty">Faculty</RouterLink>
+      <RouterLink to="/contact">Contact</RouterLink>
     </nav>
   </header>
 </template>
