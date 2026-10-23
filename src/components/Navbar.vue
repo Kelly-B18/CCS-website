@@ -13,9 +13,9 @@
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="about">About</RouterLink>
       <RouterLink to="/Academics">Academics</RouterLink>
-      <RouterLink to="/Contact">Contact</RouterLink>
-      <RouterLink to="/News">News</RouterLink>
       <RouterLink to="/Faculty">Faculty</RouterLink>
+      <RouterLink to="/News">News</RouterLink>
+      <RouterLink to="/Contact">Contact</RouterLink>
       
 
 
