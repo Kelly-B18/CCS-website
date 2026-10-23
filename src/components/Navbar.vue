@@ -3,10 +3,10 @@
   <header class="navbar">
     <!-- Brand -->
     <RouterLink to="/" class="brand">
-      <span class="brand-mark">N</span>
+      <span class="brand-mark">CPU</span>
       <span class="brand-text">
-        <strong>NEXORA</strong>
-        <small>DIGITAL SOLUTIONS</small>
+        <strong>Centralian</strong>
+        <small>CENTRAL PHILIPPINE UNIVERSITY</small>
       </span>
     </RouterLink>
 
@@ -78,7 +78,7 @@
   border-radius: 12px;
   background: #f3bd55;
   color: #171329;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 900;
   transform: skew(-5deg);
 }
