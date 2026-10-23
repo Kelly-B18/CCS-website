@@ -1,9 +1,14 @@
 
 <template>
   <header class="navbar">
-    <!-- Brand -->
-    <RouterLink to="/" class="brand">
-      <span class="brand-mark">CPU</span>
+    <!-- Brand and resized logo -->
+    <RouterLink to="/" class="brand" @click="closeMenu">
+      <img
+        :src="ccsLogo"
+        alt="CCS Logo"
+        class="brand-logo-img"
+      />
+
       <span class="brand-text">
         <strong>Centralian</strong>
         <small>CENTRAL PHILIPPINE UNIVERSITY</small>
@@ -28,7 +33,7 @@
       <RouterLink to="/" @click="closeMenu">Home</RouterLink>
       <RouterLink to="/about" @click="closeMenu">About</RouterLink>
 
-      <!-- Academics Dropdown -->
+      <!-- Academics dropdown -->
       <div
         class="dropdown"
         @mouseenter="academicsOpen = true"
@@ -43,11 +48,13 @@
         </RouterLink>
 
         <button
-          type="button"
           class="mobile-program-toggle"
+          type="button"
+          :aria-expanded="academicsOpen"
           @click="academicsOpen = !academicsOpen"
         >
-          Programs <span>{{ academicsOpen ? '−' : '+' }}</span>
+          Programs
+          <span>{{ academicsOpen ? '−' : '+' }}</span>
         </button>
 
         <div
@@ -85,6 +92,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+import ccsLogo from '@/assets/ccslogo.png'
 
 const menuOpen = ref(false)
 const academicsOpen = ref(false)
@@ -101,11 +110,11 @@ function closeMenu() {
   position: relative;
   z-index: 1000;
   min-height: 82px;
-  padding: 16px 7%;
+  padding: 12px 7%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 24px;
   flex-wrap: wrap;
   background: #100c28;
   color: #ffffff;
@@ -122,19 +131,13 @@ function closeMenu() {
   text-decoration: none;
 }
 
-.brand-mark {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 12px;
-  background: #f3bd55;
-  color: #171329;
-  font-size: 20px;
-  font-weight: 900;
-  transform: skew(-5deg);
-  box-shadow: 0 4px 18px rgba(112, 48, 239, 0.25);
+/* Logo size: change 45px to resize it */
+.brand-logo-img {
+  display: block;
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .brand-text {
@@ -145,15 +148,16 @@ function closeMenu() {
 
 .brand-text strong {
   font-family: 'Space Grotesk', Arial, sans-serif;
-  font-size: 21px;
-  letter-spacing: 2px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
 .brand-text small {
   color: #db1fff;
   font-size: 9px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
 }
 
 /* Navigation links */
@@ -240,11 +244,20 @@ function closeMenu() {
   outline-offset: 4px;
 }
 
-/* Responsive layout */
+/* Tablet and mobile */
 @media (max-width: 900px) {
   .navbar {
-    padding: 15px 5%;
+    padding: 12px 5%;
     gap: 14px;
+  }
+
+  .brand-logo-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .brand-text strong {
+    font-size: 18px;
   }
 
   .menu-toggle {
@@ -323,6 +336,26 @@ function closeMenu() {
 
   .dropdown-menu.dropdown-menu-open {
     display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo-img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .brand-text strong {
+    font-size: 16px;
+  }
+
+  .brand-text small {
+    font-size: 7px;
+    letter-spacing: 0.8px;
   }
 }
 </style>
