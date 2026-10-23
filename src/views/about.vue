@@ -3,7 +3,7 @@
   <div>
     <section class="page-hero">
       <p class="eyebrow">GET TO KNOW US</p>
-      <h1>About <span>NEXORA.</span></h1>
+      <h1>About <span>Centralian.</span></h1>
       <p>We turn creative ideas into useful digital experiences.</p>
     </section>
 

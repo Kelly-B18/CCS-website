@@ -8,14 +8,8 @@
 
         <div class="hero-content">
           <div class="hero-logo">CCS</div>
-
-          <p class="hero-kicker">CENTRAL PHILIPPINE UNIVERSITY</p>
-
-          <h1>
-            Shaping the Future
-            <span>Through Technology</span>
-          </h1>
-
+          <p class="hero-kicker">COLLEGE OF COMPUTER STUDIES</p>
+          <h1>Shaping the Future Through Technology</h1>
           <p class="hero-description">
             Empowering students to innovate, create, and lead
             in the ever-changing world of computing.
@@ -735,15 +729,6 @@ select {
 
   .partner-card {
     padding: 26px 20px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
   }
 }
 </style>

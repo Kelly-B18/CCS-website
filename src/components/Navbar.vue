@@ -3,10 +3,10 @@
   <header class="navbar">
     <!-- Brand -->
     <RouterLink to="/" class="brand">
-      <span class="brand-mark">N</span>
+      <span class="brand-mark">CPU</span>
       <span class="brand-text">
-        <strong>NEXORA</strong>
-        <small>DIGITAL SOLUTIONS</small>
+        <strong>Centralian</strong>
+        <small>CENTRAL PHILIPPINE UNIVERSITY</small>
       </span>
     </RouterLink>
 
@@ -129,10 +129,9 @@ function closeMenu() {
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
-  background: linear-gradient(135deg, #7030ef, #db1fff);
-  color: #ffffff;
-  font-family: 'Space Grotesk', Arial, sans-serif;
-  font-size: 25px;
+  background: #f3bd55;
+  color: #171329;
+  font-size: 20px;
   font-weight: 900;
   transform: skew(-5deg);
   box-shadow: 0 4px 18px rgba(112, 48, 239, 0.25);
