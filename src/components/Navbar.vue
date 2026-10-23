@@ -17,7 +17,7 @@
 
       <!-- Academics Dropdown -->
       <div class="dropdown">
-        <RouterLink to="/Academics" class="dropdown-toggle">
+        <RouterLink to="/expertise" class="dropdown-toggle">
           Academics <span class="arrow">▾</span>
         </RouterLink>
 
@@ -40,14 +40,15 @@
         </div>
       </div>
 
-      <RouterLink to="/Contact">Contact</RouterLink>
-      <RouterLink to="/News">News</RouterLink>
-      <RouterLink to="/Faculty">Faculty</RouterLink>
+      <RouterLink to="/contact">Contact</RouterLink>
+      <RouterLink to="/news">News</RouterLink>
+      <RouterLink to="/faculty">Faculty</RouterLink>
     </nav>
   </header>
 </template>
 
 <style scoped>
+/* Navbar */
 .navbar {
   min-height: 82px;
   padding: 16px 7%;
@@ -60,6 +61,7 @@
   flex-wrap: wrap;
 }
 
+/* Brand */
 .brand {
   display: flex;
   align-items: center;
@@ -98,6 +100,7 @@
   letter-spacing: 1.5px;
 }
 
+/* Navigation links */
 nav {
   display: flex;
   align-items: center;
@@ -117,7 +120,7 @@ nav a.router-link-active {
   color: #f3bd55;
 }
 
-/* Academics Dropdown */
+/* Academics dropdown */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -134,6 +137,7 @@ nav a.router-link-active {
   font-size: 12px;
 }
 
+/* Dropdown menu */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -160,13 +164,13 @@ nav a.router-link-active {
   color: #f3bd55;
 }
 
-/* Show dropdown on hover and keyboard focus */
+/* Show dropdown on hover or keyboard focus */
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu {
   display: block;
 }
 
-/* Mobile and tablet */
+/* Responsive layout */
 @media (max-width: 800px) {
   .navbar {
     justify-content: center;
