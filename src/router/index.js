@@ -7,6 +7,7 @@ import Contact from '../views/Contact.vue'
 import News from '../views/News.vue'
 import Faculty from '../views/Faculty.vue'
 
+
 // Academic program pages
 import BSIT from '../views/programs/bsit.vue'
 import BSCS from '../views/programs/bscs.vue'
