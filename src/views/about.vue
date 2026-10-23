@@ -12,7 +12,7 @@
         <p class="label">OUR STORY</p>
         <h2>A new perspective on <span>technology.</span></h2>
         <p>
-          NEXORA Digital Solutions is a fictional technology company created
+          Centralian Digital Solutions is a fictional technology company created
           to show how creativity and technology can work together. Our goal
           is to design digital experiences that are simple, helpful, and
           accessible to everyone.
@@ -68,7 +68,7 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 .story h2 span { color: #7957b6; }
 .story p:not(.label) { color: #686477; line-height: 1.9; }
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.cards article { padding: 27px; background: #f7f5fb; border-radius: 12px; }
+.cards article { padding: 27px; background: #000000; border-radius: 12px; }
 .symbol { color: #7957b6; font-size: 32px; }
 .cards h3 { margin-bottom: 10px; }
 .cards p { color: #686477; font-size: 14px; line-height: 1.8; }

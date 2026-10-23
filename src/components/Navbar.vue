@@ -1,9 +1,14 @@
 
 <template>
   <header class="navbar">
-    <!-- Brand -->
-    <RouterLink to="/" class="brand">
-      <span class="brand-mark">CPU</span>
+    <!-- Brand and resized logo -->
+    <RouterLink to="/" class="brand" @click="closeMenu">
+      <img
+        :src="ccsLogo"
+        alt="CCS Logo"
+        class="brand-logo-img"
+      />
+
       <span class="brand-text">
         <strong>Centralian</strong>
         <small>CENTRAL PHILIPPINE UNIVERSITY</small>
@@ -15,14 +20,39 @@
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
 
-      <!-- Academics Dropdown -->
-      <div class="dropdown">
-        <RouterLink to="/expertise" class="dropdown-toggle">
+      <!-- Academics dropdown -->
+      <div
+        class="dropdown"
+        @mouseenter="academicsOpen = true"
+        @mouseleave="academicsOpen = false"
+      >
+        <RouterLink
+          to="/expertise"
+          class="dropdown-toggle"
+          @click="closeMenu"
+        >
           Academics <span class="arrow">▾</span>
         </RouterLink>
 
-        <div class="dropdown-menu">
-          <RouterLink to="/academic-programs/bsit">
+        <button
+          class="mobile-program-toggle"
+          type="button"
+          :aria-expanded="academicsOpen"
+          @click="academicsOpen = !academicsOpen"
+        >
+          Programs
+          <span>{{ academicsOpen ? '−' : '+' }}</span>
+        </button>
+
+        <div
+          class="dropdown-menu"
+          :class="{ 'dropdown-menu-open': academicsOpen }"
+        >
+          <RouterLink to="/expertise" @click="closeMenu">
+            Academics Overview
+          </RouterLink>
+
+          <RouterLink to="/academic-programs/bsit" @click="closeMenu">
             Information Technology
           </RouterLink>
 
@@ -47,17 +77,29 @@
   </header>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+import ccsLogo from '@/assets/ccslogo.png'
+
+const menuOpen = ref(false)
+const academicsOpen = ref(false)
+
+function closeMenu() {
+  menuOpen.value = false
+  academicsOpen.value = false
+}
+</script>
+
 <style scoped>
 /* Navbar */
 .navbar {
   min-height: 82px;
-  padding: 16px 7%;
+  padding: 12px 7%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
-  background: #171329;
-  color: white;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
@@ -70,17 +112,13 @@
   text-decoration: none;
 }
 
-.brand-mark {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: #f3bd55;
-  color: #171329;
-  font-size: 20px;
-  font-weight: 900;
-  transform: skew(-5deg);
+/* Logo size: change 45px to resize it */
+.brand-logo-img {
+  display: block;
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .brand-text {
@@ -90,14 +128,17 @@
 }
 
 .brand-text strong {
-  font-size: 21px;
-  letter-spacing: 2px;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
 .brand-text small {
   color: #f3bd55;
   font-size: 9px;
-  letter-spacing: 1.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
 }
 
 /* Navigation links */
@@ -170,20 +211,125 @@ nav a.router-link-active {
   display: block;
 }
 
-/* Responsive layout */
-@media (max-width: 800px) {
+/* Mobile controls */
+.menu-toggle,
+.mobile-program-toggle {
+  display: none;
+}
+
+.menu-toggle:focus-visible,
+.mobile-program-toggle:focus-visible,
+.navbar a:focus-visible {
+  outline: 2px solid #db1fff;
+  outline-offset: 4px;
+}
+
+/* Tablet and mobile */
+@media (max-width: 900px) {
   .navbar {
-    justify-content: center;
+    padding: 12px 5%;
+    gap: 14px;
   }
 
-  nav {
+  .brand-logo-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .brand-text strong {
+    font-size: 18px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 14px;
+    gap: 5px;
+    border: 1px solid rgba(219, 31, 255, 0.35);
+    border-radius: 8px;
+    background: #17142f;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 19px;
+    height: 2px;
+    border-radius: 2px;
+    background: #ffffff;
+  }
+
+  .navbar nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px 0 6px;
+  }
+
+  .navbar nav.nav-open {
+    display: flex;
+  }
+
+  .navbar nav > a {
+    display: block;
+    padding: 12px 8px;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-toggle {
+    display: none !important;
+  }
+
+  .mobile-program-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 8px;
+    border: none;
+    background: transparent;
+    color: #c9c2dc;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .mobile-program-toggle:hover {
+    color: #db1fff;
   }
 
   .dropdown-menu {
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 400px) {
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo-img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .brand-text strong {
+    font-size: 16px;
+  }
+
+  .brand-text small {
+    font-size: 7px;
+    letter-spacing: 0.8px;
   }
 }
 </style>
