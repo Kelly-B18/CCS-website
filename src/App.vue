@@ -5,15 +5,9 @@ import Navbar from './components/Navbar.vue'
 
 <template>
   <div class="app">
-<<<<<<< HEAD
-    <Navbar />
-
-    <main class="main-content">
-=======
  <Navbar />
  
     <main>
->>>>>>> 68b65c4e51a4e2ca9e719032baea1173a5d0e35c
       <RouterView />
     </main>
 

@@ -10,106 +10,55 @@
       </span>
     </RouterLink>
 
-    <!-- Mobile menu button -->
-    <button
-      class="menu-toggle"
-      type="button"
-      :aria-expanded="menuOpen"
-      aria-label="Toggle navigation"
-      @click="menuOpen = !menuOpen"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
     <!-- Navigation -->
-    <nav :class="{ 'nav-open': menuOpen }">
-      <RouterLink to="/" @click="closeMenu">Home</RouterLink>
-      <RouterLink to="/about" @click="closeMenu">About</RouterLink>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
 
       <!-- Academics Dropdown -->
-      <div
-        class="dropdown"
-        @mouseenter="academicsOpen = true"
-        @mouseleave="academicsOpen = false"
-      >
-        <RouterLink
-          to="/expertise"
-          class="dropdown-toggle"
-          @click="closeMenu"
-        >
+      <div class="dropdown">
+        <RouterLink to="/expertise" class="dropdown-toggle">
           Academics <span class="arrow">▾</span>
         </RouterLink>
 
-        <button
-          type="button"
-          class="mobile-program-toggle"
-          @click="academicsOpen = !academicsOpen"
-        >
-          Programs <span>{{ academicsOpen ? '−' : '+' }}</span>
-        </button>
-
-        <div
-          class="dropdown-menu"
-          :class="{ 'dropdown-menu-open': academicsOpen }"
-        >
-          <RouterLink to="/expertise" @click="closeMenu">
-            Academics Overview
-          </RouterLink>
-
-          <RouterLink to="/academic-programs/bsit" @click="closeMenu">
+        <div class="dropdown-menu">
+          <RouterLink to="/academic-programs/bsit">
             Information Technology
           </RouterLink>
 
-          <RouterLink to="/academic-programs/bscs" @click="closeMenu">
+          <RouterLink to="/academic-programs/bscs">
             Computer Science
           </RouterLink>
 
-          <RouterLink to="/academic-programs/dmia" @click="closeMenu">
+          <RouterLink to="/academic-programs/dmia">
             Digital Media and Interactive Arts
           </RouterLink>
 
-          <RouterLink to="/academic-programs/blis" @click="closeMenu">
+          <RouterLink to="/academic-programs/blis">
             Library and Information Science
           </RouterLink>
         </div>
       </div>
 
-      <RouterLink to="/news" @click="closeMenu">News</RouterLink>
-      <RouterLink to="/faculty" @click="closeMenu">Faculty</RouterLink>
-      <RouterLink to="/contact" @click="closeMenu">Contact</RouterLink>
+      <RouterLink to="/news">News</RouterLink>
+      <RouterLink to="/faculty">Faculty</RouterLink>
+      <RouterLink to="/contact">Contact</RouterLink>
     </nav>
   </header>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-
-const menuOpen = ref(false)
-const academicsOpen = ref(false)
-
-function closeMenu() {
-  menuOpen.value = false
-  academicsOpen.value = false
-}
-</script>
-
 <style scoped>
-/* Main navbar */
+/* Navbar */
 .navbar {
-  position: relative;
-  z-index: 1000;
   min-height: 82px;
   padding: 16px 7%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 25px;
+  background: #171329;
+  color: white;
   flex-wrap: wrap;
-  background: #100c28;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(219, 31, 255, 0.22);
 }
 
 /* Brand */
@@ -117,8 +66,7 @@ function closeMenu() {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-shrink: 0;
-  color: #ffffff;
+  color: white;
   text-decoration: none;
 }
 
@@ -127,64 +75,61 @@ function closeMenu() {
   height: 44px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
   background: #f3bd55;
   color: #171329;
   font-size: 20px;
   font-weight: 900;
   transform: skew(-5deg);
-  box-shadow: 0 4px 18px rgba(112, 48, 239, 0.25);
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .brand-text strong {
-  font-family: 'Space Grotesk', Arial, sans-serif;
   font-size: 21px;
   letter-spacing: 2px;
 }
 
 .brand-text small {
-  color: #db1fff;
+  color: #f3bd55;
   font-size: 9px;
-  font-weight: 700;
   letter-spacing: 1.5px;
 }
 
 /* Navigation links */
-.navbar nav {
+nav {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.navbar nav a {
-  color: #c9c2dc;
+nav a {
+  color: #e6e2ef;
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  transition: color 0.2s ease;
+  font-size: 14px;
+  transition: color 0.2s;
 }
 
-.navbar nav a:hover,
-.navbar nav a.router-link-active {
-  color: #db1fff;
+nav a:hover,
+nav a.router-link-active {
+  color: #f3bd55;
 }
 
 /* Academics dropdown */
 .dropdown {
   position: relative;
+  display: inline-block;
 }
 
 .dropdown-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   padding: 10px 0;
 }
 
@@ -192,137 +137,53 @@ function closeMenu() {
   font-size: 12px;
 }
 
-/* Dropdown panel */
+/* Dropdown menu */
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
-  left: -14px;
-  width: 275px;
-  padding: 8px;
-  border: 1px solid rgba(219, 31, 255, 0.25);
-  border-radius: 10px;
-  background: #17142f;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
-  z-index: 1100;
+  left: 0;
+  min-width: 245px;
+  background: #171329;
+  border: 1px solid #373149;
+  border-radius: 8px;
+  padding: 8px 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
 }
 
 .dropdown-menu a {
   display: block;
-  padding: 12px;
-  border-radius: 6px;
+  padding: 12px 16px;
   line-height: 1.5;
   white-space: normal;
 }
 
-.dropdown-menu a:hover,
-.dropdown-menu a.router-link-active {
-  background: rgba(112, 48, 239, 0.2);
-  color: #ffffff;
+.dropdown-menu a:hover {
+  background: #29243d;
+  color: #f3bd55;
 }
 
+/* Show dropdown on hover or keyboard focus */
 .dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu,
-.dropdown-menu.dropdown-menu-open {
+.dropdown:focus-within .dropdown-menu {
   display: block;
 }
 
-/* Mobile controls */
-.menu-toggle,
-.mobile-program-toggle {
-  display: none;
-}
-
-.menu-toggle:focus-visible,
-.mobile-program-toggle:focus-visible,
-.navbar a:focus-visible {
-  outline: 2px solid #db1fff;
-  outline-offset: 4px;
-}
-
 /* Responsive layout */
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .navbar {
-    padding: 15px 5%;
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
     gap: 14px;
   }
 
-  .menu-toggle {
-    display: flex;
-    width: 42px;
-    height: 42px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    border: 1px solid rgba(219, 31, 255, 0.35);
-    border-radius: 8px;
-    background: #17142f;
-    cursor: pointer;
-  }
-
-  .menu-toggle span {
-    width: 19px;
-    height: 2px;
-    border-radius: 2px;
-    background: #ffffff;
-  }
-
-  .navbar nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    padding: 12px 0 6px;
-  }
-
-  .navbar nav.nav-open {
-    display: flex;
-  }
-
-  .navbar nav > a {
-    display: block;
-    padding: 12px 8px;
-  }
-
-  .dropdown {
-    width: 100%;
-  }
-
-  .dropdown-toggle {
-    display: none !important;
-  }
-
-  .mobile-program-toggle {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 8px;
-    border: none;
-    background: transparent;
-    color: #c9c2dc;
-    font: inherit;
-    font-size: 13px;
-    font-weight: 600;
-    text-align: left;
-    cursor: pointer;
-  }
-
-  .mobile-program-toggle:hover {
-    color: #db1fff;
-  }
-
   .dropdown-menu {
-    position: static;
-    width: 100%;
-    margin: 0;
-    box-shadow: none;
-  }
-
-  .dropdown-menu.dropdown-menu-open {
-    display: block;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 </style>
